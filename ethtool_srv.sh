@@ -19,9 +19,9 @@ else
 fi 
 
 # create a service in systemd
-SERVICE_FILES_PATH = "/etc/systemd/system/ethtool.service"
+SERVICE_FILES_PATH="/etc/systemd/system/ethtool.service"
 
-if [ -e "$SERVICE_FILES_PATH"]; then
+if [ -e "$SERVICE_FILES_PATH" ]; then
     echo "ethtool service is exists. Exiting..."
     exit 0
 else
@@ -29,7 +29,7 @@ else
 fi
 
 # service contents
-sudo cat > &SERVICE_FILES_PATH << EOF
+sudo cat > $SERVICE_FILES_PATH << EOF
 [Unit]
 Description=setup eth0 speed and duplex
 After=multi-user.target
