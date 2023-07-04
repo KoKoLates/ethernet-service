@@ -1,0 +1,10 @@
+[Unit]
+Description=setup eth0 speed and duplex
+After=multi-user.target
+
+[Service]
+ExecStart=/sbin/ethtool -s eth0 speed 100 duplex full
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
