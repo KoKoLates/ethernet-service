@@ -1,6 +1,13 @@
 #!/bin/bash
+# @Author: Po-Ting Ko
+# @Date: 2023-07-04
+# @Last Modified: 2023-07-04 by Ko
+# @Description:
+# The script is to generate and configure the systemd service 
+# for ethtool to setup corresponding attribute of Ethernet (eth0). 
+# This script could be used both in raspberry pi 4 and jetson xavier.
 
-# check the ethtool is installed or not
+# check out the ethtool is installed or not
 if ! command -v ethtool &> /dev/null; then
     echo "ethtool is not installed. Installing..."
 
@@ -13,9 +20,7 @@ if ! command -v ethtool &> /dev/null; then
     else
         echo "failed to install. Exiting..."
         exit 1
-    fi 
-else
-    echo "ethtool is already installed."
+    fi
 fi 
 
 # create a service in systemd
@@ -47,7 +52,7 @@ chmod 644 $SERVICE_FILES_PATH
 
 # reloading the systemd configuration
 sudo systemctl daemon-reload
-echo "the ethtool service has configured"
+echo "configure success"
 
 sudo systemctl enable ethtool.service
 sudo systemctl start ethtool.service
