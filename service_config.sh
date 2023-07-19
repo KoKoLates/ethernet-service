@@ -52,7 +52,8 @@ chmod 644 $SERVICE_FILES_PATH
 
 # reloading the systemd configuration
 sudo systemctl daemon-reload
-echo "configure success"
 
 sudo systemctl enable ethtool.service
 sudo systemctl start ethtool.service
+
+echo "Configuration Successful"
