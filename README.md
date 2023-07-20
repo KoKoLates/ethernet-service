@@ -1,16 +1,17 @@
 # ethernet-service
-The configuration script of systemd service for ethtool.
+The configuration scripts of systemd service for ethtool and ethernet setting.
 
 ## Setup & Run
-1. Clone the repository
+1. Clone this repository to the local side for the service.
 ```shell
 git clone https://github.com/KoKoLates/ethernet-service.git
 ```
-2. Modifying authorization
+2. Modifying authorization.
 ```shell
+cd ethernet-service
 sudo chmod 644 service_config.sh
 ```
-3. Configure the service
+3. Start configurate the ethtool and ethernet services.
 ```
 sudo ./service_config.sh -y
 ```
